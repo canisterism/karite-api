@@ -13,8 +13,8 @@ class BooksController < ApplicationController
     render json: @book
   end
 
-  # GET /books/search?title=hoge
-  def search
+  # GET /books/search/title/:string
+  def search_by_title
     @books = Book.where('title LIKE ?', "%#{params[:title]}%")
     render json: @books
   end
